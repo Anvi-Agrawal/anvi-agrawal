@@ -7,6 +7,7 @@ a {
     transition: color 0.4s ease;
 }
 
+/* Main page styles */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +23,8 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* NAVIGATION */
+
+/* link tabs */
 nav {
     display: flex;
     justify-content: space-between;
@@ -54,7 +56,7 @@ nav a:hover {
     color: #c9b7ff;
 }
 
-/* HERO SECTION */
+/* hero body */
 .hero {
     height: 650px;
     /* smaller than full viewport */
@@ -79,7 +81,6 @@ nav a:hover {
     opacity: 1;
 }
 
-/* Optional overlay for text readability */
 .hero::after {
     content: "";
     position: absolute;
@@ -120,6 +121,7 @@ nav a:hover {
     text-transform: uppercase;
 }
 
+/* home page arrow */
 .hero-arrow {
     margin-top: 30px;
     display: inline-flex;
@@ -157,7 +159,6 @@ nav a:hover {
     border-bottom: 2px solid var(--accent);
 }
 
-
 /* Hover effect */
 .hero-arrow {
     color: white;
@@ -180,7 +181,7 @@ nav a:hover {
     width: 170px;
 }
 
-/* LOGO / NAME */
+/* name on bar */
 .logo a {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
@@ -208,7 +209,7 @@ nav a:hover {
     width: 100%;
 }
 
-/* NAV LINKS */
+/* links for navigation bar */
 nav ul li a {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
@@ -218,7 +219,6 @@ nav ul li a {
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
-    /* added to position the ::after pseudo-element */
 }
 
 nav ul li a::after {
@@ -228,11 +228,9 @@ nav ul li a::after {
     bottom: -6px;
     width: 0;
     height: 1px;
-    /* thin line like the logo */
     background-color: var(--accent);
-    /* light purple */
+    /* light purple accents (est above)*/
     transition: width 0.3s ease;
-    /* smooth expansion */
 }
 
 nav ul li a:hover {
@@ -241,12 +239,9 @@ nav ul li a:hover {
 
 nav ul li a:hover::after {
     width: 100%;
-    /* expands the line fully on hover */
 }
 
-
-
-/* CONTENT */
+/* form of body */
 .content {
     padding: 80px 10%;
     display: flex;
@@ -255,7 +250,6 @@ nav ul li a:hover::after {
     justify-content: center;
     text-align: center;
     min-height: 50vh;
-    /* optional for better vertical centering */
 }
 
 .content h3 {
@@ -264,7 +258,7 @@ nav ul li a:hover::after {
     color: #c9b7ff;
 }
 
-/* GALLERY */
+/* portfolio gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -274,28 +268,22 @@ nav ul li a:hover::after {
 
 .gallery img {
     width: 100%;
-    /* fill the grid cell */
     height: 250px;
-    /* fixed height for consistency */
     object-fit: cover;
-    /* crop to fit without stretching */
     border-radius: 4px;
-    /* subtle rounding for luxury look */
+    /* slightly rounded edges */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
     transform: scale(1.03);
-    /* subtle zoom on hover */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    /* optional luxury shadow */
 }
 
-
+/* adjustemnts based on device size */
 @media screen and (max-width: 900px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for tablets */
     }
 }
 
@@ -359,7 +347,7 @@ h3 {
 }
 
 
-
+/* footer styles */
 .footer {
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -385,6 +373,7 @@ h3 {
     margin-bottom: 10px;
 }
 
+/* about image styling */
 .about-image img {
     max-width: 400px;
     /* adjust as needed */
