@@ -1,0 +1,396 @@
+:root {
+    --accent: #c7b9ff;
+    /* light purple */
+}
+
+a {
+    transition: color 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #1a1a1d;
+    /* dark gray, softer than black */
+    color: #ffffff;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+}
+
+nav h1 {
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+nav a:hover {
+    color: #c9b7ff;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 650px;
+    /* smaller than full viewport */
+    max-width: 88%;
+    margin: 80px auto 10px;
+    /* gives space around for luxury look */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    /* rounded edges */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    /* soft shadow */
+}
+
+/* Background slideshow */
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-size: 120%;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+/* Optional overlay for text readability */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Ensure text is above images */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+
+.hero-text p {
+    color: #c9b7ff;
+    margin-top: 10px;
+}
+
+.hero-text h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 510;
+    line-height: 1;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.hero-arrow {
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.arrow-line {
+    width: 130px;
+    height: 2px;
+    /* thin main line */
+    background-color: var(--accent);
+    position: relative;
+    transition: width 0.3s ease;
+}
+
+.arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -2px;
+    /* close to end of line */
+    top: 50%;
+    /* vertically center */
+    transform: translateY(-50%) rotate(-45deg);
+    width: 10px;
+    /* arrowhead size */
+    height: 10px;
+    border-right: 2px solid var(--accent);
+    /* match line thickness */
+    border-bottom: 2px solid var(--accent);
+}
+
+
+/* Hover effect */
+.hero-arrow {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.hero-arrow:hover {
+    color: var(--accent);
+}
+
+.hero-arrow:hover .arrow-line {
+    background-color: var(--accent);
+}
+
+.hero-arrow:hover .arrow-line::after {
+    border-color: var(--accent);
+}
+
+.hero-arrow:hover .arrow-line {
+    width: 170px;
+}
+
+/* LOGO / NAME */
+.logo a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    position: relative;
+    /* needed for ::after to position correctly */
+}
+
+.logo a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent);
+    /* matches your nav links */
+    transition: width 0.3s ease;
+}
+
+.logo a:hover::after {
+    width: 100%;
+}
+
+/* NAV LINKS */
+nav ul li a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    /* added to position the ::after pseudo-element */
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    /* thin line like the logo */
+    background-color: var(--accent);
+    /* light purple */
+    transition: width 0.3s ease;
+    /* smooth expansion */
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    /* expands the line fully on hover */
+}
+
+
+
+/* CONTENT */
+.content {
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50vh;
+    /* optional for better vertical centering */
+}
+
+.content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #c9b7ff;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* exactly 3 columns */
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    /* fill the grid cell */
+    height: 250px;
+    /* fixed height for consistency */
+    object-fit: cover;
+    /* crop to fit without stretching */
+    border-radius: 4px;
+    /* subtle rounding for luxury look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    /* subtle zoom on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* optional luxury shadow */
+}
+
+
+@media screen and (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for tablets */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        /* 1 column for mobiles */
+    }
+
+    .gallery img {
+        height: 200px;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+}
+
+
+.fade-in {
+    font-family: 'Playfair Display', serif;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.fade-delay {
+    font-family: 'Playfair Display', serif;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo a:hover {
+    color: var(--accent);
+}
+
+.content h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.content p {
+    max-width: 600px;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+
+
+.footer {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding: 20px 10%;
+    color: #ffffff;
+    /* text in white */
+    font-size: 0.9rem;
+    letter-spacing: -0.02em;
+}
+
+.footer p {
+    font-family: 'Playfair Display', serif;
+    /* optional, reinforces the font */
+    margin: 0;
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    /* very thin line */
+    background-color: var(--accent);
+    /* light purple */
+    margin-bottom: 10px;
+}
+
+.about-image img {
+    max-width: 400px;
+    /* adjust as needed */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 6px;
+}
